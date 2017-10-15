@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="TechnikiOptymalizacjiAG_MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TechnikiOptymalizacjiAG_MainWindow.Designer.cs">
+      <DependentUpon>TechnikiOptymalizacjiAG_MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TechnikiOptymalizacjiAG_MainWindow.resx">
+      <DependentUpon>TechnikiOptymalizacjiAG_MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +78,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeneticSharp.Domain\GeneticSharp.Domain.csproj">
+      <Project>{c76dc1ad-fc7e-4168-bd19-101ff84a43f7}</Project>
+      <Name>GeneticSharp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneticSharp.Extensions\GeneticSharp.Extensions.csproj">
+      <Project>{699af592-1e11-4084-b87e-9ac72ed7861b}</Project>
+      <Name>GeneticSharp.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneticSharp.Infrastructure.Framework\GeneticSharp.Infrastructure.Framework.csproj">
+      <Project>{1498d792-d02b-4a9e-8afc-24aeba0dee54}</Project>
+      <Name>GeneticSharp.Infrastructure.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneticSharp.Infrastructure.Threading\GeneticSharp.Infrastructure.Threading.csproj">
+      <Project>{f7887a7c-89e6-483a-a762-0a8fe6fcd923}</Project>
+      <Name>GeneticSharp.Infrastructure.Threading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneticSharp.Runner\GeneticSharp.Runner.csproj">
+      <Project>{1c422d09-edc6-496b-ad17-732649a0c1c0}</Project>
+      <Name>GeneticSharp.Runner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
