@@ -1,0 +1,13 @@
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Extensions.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Extensions.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Extensions.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Domain.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Infrastructure.Framework.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\NCalc.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Domain.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Domain.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Infrastructure.Framework.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\bin\Debug\GeneticSharp.Infrastructure.Framework.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\obj\Debug\GeneticSharp.Extensions.csprojResolveAssemblyReference.cache
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\obj\Debug\GeneticSharp.Extensions.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Extensions\obj\Debug\GeneticSharp.Extensions.pdb

@@ -176,6 +176,12 @@ namespace TechnikiOptymalizacjiAG
             // FunctionSelectionCombo
             // 
             this.FunctionSelectionCombo.FormattingEnabled = true;
+            this.FunctionSelectionCombo.Items.AddRange(new object[] {
+            "2*x^2+x-2",
+            "x^2+sin(3 cos(5x))",
+            "x^4+x^3-7x^2-5x+10",
+            "sin(2 x)+ln(x^2)",
+            "|(log_{10}(x^2)|"});
             this.FunctionSelectionCombo.Location = new System.Drawing.Point(105, 52);
             this.FunctionSelectionCombo.Name = "FunctionSelectionCombo";
             this.FunctionSelectionCombo.Size = new System.Drawing.Size(121, 21);
@@ -185,11 +191,11 @@ namespace TechnikiOptymalizacjiAG
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 55);
+            this.label7.Location = new System.Drawing.Point(68, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.Size = new System.Drawing.Size(18, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Fukcja";
+            this.label7.Text = "y=";
             // 
             // CompareBtn
             // 

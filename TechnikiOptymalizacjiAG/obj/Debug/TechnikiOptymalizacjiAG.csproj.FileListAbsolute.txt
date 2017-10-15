@@ -12,3 +12,7 @@ E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymali
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\bin\Debug\TechnikiOptymalizacjiAG.exe.config
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.exe
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.csprojResolveAssemblyReference.cache
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.TechnikiOptymalizacjiAGMainWindow.resources
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.Properties.Resources.resources
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.csproj.GenerateResource.Cache
