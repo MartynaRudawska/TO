@@ -251,8 +251,8 @@ namespace TechnikiOptymalizacjiAG
             // 
             this.CrossingCombo.FormattingEnabled = true;
             this.CrossingCombo.Items.AddRange(new object[] {
-            "Jedno puktowe",
-            "Dwu Puktowe",
+            "Jedno punktowy",
+            "Dwu Punktowy",
             "Davisa Zamówienie (OX1)",
             "Zwrotnicowy (OX2)",
             "Pozycyjny (POS)"});
