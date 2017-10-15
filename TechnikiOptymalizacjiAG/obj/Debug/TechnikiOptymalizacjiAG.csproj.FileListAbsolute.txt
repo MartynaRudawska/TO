@@ -8,7 +8,6 @@ E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymali
 E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.csproj.GenerateResource.Cache
 E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.exe
 E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.pdb
-<<<<<<< HEAD
 E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\bin\Debug\GeneticSharp.Domain.dll
 E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\bin\Debug\GeneticSharp.Extensions.dll
 E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\bin\Debug\GeneticSharp.Infrastructure.Framework.dll
@@ -45,4 +44,3 @@ C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymal
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.TechnikiOptymalizacjiAGMainWindow.resources
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.Properties.Resources.resources
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\TechnikiOptymalizacjiAG\obj\Debug\TechnikiOptymalizacjiAG.csproj.GenerateResource.Cache
->>>>>>> f3b55ccc05805066536b09b6483065f05dfb1dc4

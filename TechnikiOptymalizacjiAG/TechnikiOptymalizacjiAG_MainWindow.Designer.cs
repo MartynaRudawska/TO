@@ -394,10 +394,9 @@ namespace TechnikiOptymalizacjiAG
 
         }
 
-        private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+       
+
+
 
         #endregion
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Runner\bin\Debug\GeneticSharp.Runner.exe
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Runner\bin\Debug\GeneticSharp.Runner.pdb
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Runner\bin\Debug\atk-sharp.dll
@@ -18,4 +17,3 @@ E:\sourcefiles\repozytoria\TO\GeneticSharp.Runner\obj\Debug\GeneticSharp.Runner.
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Runner\obj\Debug\GeneticSharp.Runner.pdb
 =======
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Runner\obj\Debug\GeneticSharp.Runner.csprojResolveAssemblyReference.cache
->>>>>>> f3b55ccc05805066536b09b6483065f05dfb1dc4

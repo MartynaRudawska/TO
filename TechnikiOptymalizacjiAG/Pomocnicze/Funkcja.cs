@@ -38,7 +38,7 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
         {
             //f(x) = x^2+sin(3 cos(5 x))
             y = Math.Pow(x, 2) + Math.Sin(3 * Math.Cos(5 * x));
-            Dziedzina =[-1,1];
+            Dziedzina = new double[] { -1, 1 } ;
             return new Tuple<double, double>(yMin, y);
             // return yMin;
         }
