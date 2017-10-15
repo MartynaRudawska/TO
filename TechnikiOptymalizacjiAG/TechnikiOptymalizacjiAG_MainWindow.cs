@@ -69,65 +69,6 @@ namespace TechnikiOptymalizacjiAG
 
 
 
-        private void PrepareComboBoxes()
-        {
-            PrepareEditComboBox(
-               cmbSelection,
-               btnEditSelection,
-               SelectionService.GetSelectionNames,
-               SelectionService.GetSelectionTypeByName,
-               SelectionService.CreateSelectionByName,
-               () => m_selection,
-               (i) => m_selection = i);
-
-            PrepareEditComboBox(
-                cmbCrossover,
-                btnEditCrossover,
-                CrossoverService.GetCrossoverNames,
-                CrossoverService.GetCrossoverTypeByName,
-                CrossoverService.CreateCrossoverByName,
-                () => m_crossover,
-                (i) => m_crossover = i);
-
-            PrepareEditComboBox(
-                cmbMutation,
-                btnEditMutation,
-                MutationService.GetMutationNames,
-                MutationService.GetMutationTypeByName,
-                MutationService.CreateMutationByName,
-                () => m_mutation,
-                (i) => m_mutation = i);
-
-            PrepareEditComboBox(
-                cmbTermination,
-                btnEditTermination,
-                () =>
-                {
-                    return TerminationService.GetTerminationNames();
-                },
-                TerminationService.GetTerminationTypeByName,
-                TerminationService.CreateTerminationByName,
-                () => m_termination,
-                (i) => m_termination = i);
-
-            PrepareEditComboBox(
-                cmbTermination1,
-                btnEditReinsertion,
-                ReinsertionService.GetReinsertionNames,
-                ReinsertionService.GetReinsertionTypeByName,
-                ReinsertionService.CreateReinsertionByName,
-                () => m_reinsertion,
-                (i) => m_reinsertion = i);
-
-            PrepareEditComboBox(
-                cmbGenerationStrategy,
-                btnEditGenerationStrategy,
-                PopulationService.GetGenerationStrategyNames,
-                PopulationService.GetGenerationStrategyTypeByName,
-                PopulationService.CreateGenerationStrategyByName,
-                () => m_generationStrategy,
-                (i) => m_generationStrategy = i);
-        }
 
 
 
