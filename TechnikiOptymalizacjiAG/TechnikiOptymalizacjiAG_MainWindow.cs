@@ -43,7 +43,7 @@ namespace TechnikiOptymalizacjiAG
 
         private void IterationThresholdUpDown_ValueChanged(object sender, EventArgs e)
         {
-
+            MessageBox.Show(IterationThresholdUpDown.Value.ToString());
         }
 
         private void TimeThresholdUpDown_ValueChanged(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace TechnikiOptymalizacjiAG
 
         private void PopulationMinUpDown_ValueChanged(object sender, EventArgs e)
         {
-
+            Console.WriteLine(PopulationMinUpDown.Value.ToString());
         }
 
         private void PopulationMaxUpDown_ValueChanged(object sender, EventArgs e)
