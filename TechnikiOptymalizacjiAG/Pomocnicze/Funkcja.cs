@@ -27,9 +27,6 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             return new Tuple<double, double>(yMin, y);
         }
 
-
-
-
         /// <summary>
         /// przykład funkcji kwadratowej Sin Cos
         /// </summary>
@@ -43,8 +40,6 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             // return yMin;
         }
 
-
-
         /// <summary>
         /// Przykład funkcji wielomianowej
         /// </summary>
@@ -57,8 +52,6 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             //return gMin;
         }
 
-
-
         /// <summary>
         /// Przykład funkcji sin
         /// </summary>
@@ -69,9 +62,6 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             y = Math.Sin(2 * x) + Math.Log(Math.Pow(x, 2));
             return new Tuple<double, double>(yMin, y);
         }
-
-
-
 
         /// <summary>
         /// Przykład funkcji Logarytmicznej
@@ -84,7 +74,6 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             return new Tuple<double, double>(yMin, y);
             //return yMin;
         }
-
     }
     class Przystosowanie
     {
@@ -103,7 +92,6 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             }
             return s;
         }
-
     }
 
     class Funkcje
