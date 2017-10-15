@@ -1,2 +1,3 @@
 C:\Users\Martyna\Documents\TO\TechnikiOptymalizacjiAG\TechnikiOptymalizacjiAG\bin\Debug\TechnikiOptymalizacjiAG.exe.config
 C:\Users\Martyna\Documents\TO\TechnikiOptymalizacjiAG\bin\Debug\TechnikiOptymalizacjiAG.exe.config
+E:\sourcefiles\repozytoria\TO\TechnikiOptymalizacjiAG\bin\Debug\TechnikiOptymalizacjiAG.exe.config
