@@ -43,7 +43,7 @@ namespace TechnikiOptymalizacjiAG
             this.FunctionSelectionCombo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CompareBtn = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxAG = new System.Windows.Forms.GroupBox();
             this.MutationProbTrackbar = new System.Windows.Forms.TrackBar();
             this.label8 = new System.Windows.Forms.Label();
             this.CrossingCombo = new System.Windows.Forms.ComboBox();
@@ -60,7 +60,7 @@ namespace TechnikiOptymalizacjiAG
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IterationThresholdUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeThresholdUpDown)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxAG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MutationProbTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMaxUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMinUpDown)).BeginInit();
@@ -78,7 +78,7 @@ namespace TechnikiOptymalizacjiAG
             this.groupBox2.Size = new System.Drawing.Size(823, 161);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Warunki Funkcji";
             // 
             // groupBox3
             // 
@@ -176,6 +176,12 @@ namespace TechnikiOptymalizacjiAG
             // FunctionSelectionCombo
             // 
             this.FunctionSelectionCombo.FormattingEnabled = true;
+            this.FunctionSelectionCombo.Items.AddRange(new object[] {
+            "2*x^2+x-2",
+            "x^2+sin(3 cos(5x))",
+            "x^4+x^3-7x^2-5x+10",
+            "sin(2 x)+ln(x^2)",
+            "|(log_{10}(x^2)|"});
             this.FunctionSelectionCombo.Location = new System.Drawing.Point(105, 52);
             this.FunctionSelectionCombo.Name = "FunctionSelectionCombo";
             this.FunctionSelectionCombo.Size = new System.Drawing.Size(121, 21);
@@ -185,11 +191,11 @@ namespace TechnikiOptymalizacjiAG
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 55);
+            this.label7.Location = new System.Drawing.Point(68, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.Size = new System.Drawing.Size(18, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Fukcja";
+            this.label7.Text = "y=";
             // 
             // CompareBtn
             // 
@@ -201,26 +207,26 @@ namespace TechnikiOptymalizacjiAG
             this.CompareBtn.UseVisualStyleBackColor = true;
             this.CompareBtn.Click += new System.EventHandler(this.CompareBtn_Click);
             // 
-            // groupBox1
+            // groupBoxAG
             // 
-            this.groupBox1.Controls.Add(this.MutationProbTrackbar);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.CrossingCombo);
-            this.groupBox1.Controls.Add(this.SelectionCombo);
-            this.groupBox1.Controls.Add(this.PopulationMaxUpDown);
-            this.groupBox1.Controls.Add(this.PopulationMinUpDown);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(75, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 394);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Algorytm Genetyczny";
+            this.groupBoxAG.Controls.Add(this.MutationProbTrackbar);
+            this.groupBoxAG.Controls.Add(this.label8);
+            this.groupBoxAG.Controls.Add(this.CrossingCombo);
+            this.groupBoxAG.Controls.Add(this.SelectionCombo);
+            this.groupBoxAG.Controls.Add(this.PopulationMaxUpDown);
+            this.groupBoxAG.Controls.Add(this.PopulationMinUpDown);
+            this.groupBoxAG.Controls.Add(this.label6);
+            this.groupBoxAG.Controls.Add(this.label5);
+            this.groupBoxAG.Controls.Add(this.label4);
+            this.groupBoxAG.Controls.Add(this.label3);
+            this.groupBoxAG.Controls.Add(this.label2);
+            this.groupBoxAG.Controls.Add(this.label1);
+            this.groupBoxAG.Location = new System.Drawing.Point(75, 22);
+            this.groupBoxAG.Name = "groupBoxAG";
+            this.groupBoxAG.Size = new System.Drawing.Size(343, 394);
+            this.groupBoxAG.TabIndex = 6;
+            this.groupBoxAG.TabStop = false;
+            this.groupBoxAG.Text = "Algorytm Genetyczny";
             // 
             // MutationProbTrackbar
             // 
@@ -245,8 +251,8 @@ namespace TechnikiOptymalizacjiAG
             // 
             this.CrossingCombo.FormattingEnabled = true;
             this.CrossingCombo.Items.AddRange(new object[] {
-            "Jedno puktowe",
-            "Dwu Puktowe",
+            "Jedno punktowy",
+            "Dwu Punktowy",
             "Davisa Zamówienie (OX1)",
             "Zwrotnicowy (OX2)",
             "Pozycyjny (POS)"});
@@ -369,7 +375,7 @@ namespace TechnikiOptymalizacjiAG
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 607);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxAG);
             this.Name = "TechnikiOptymalizacjiAGMainWindow";
             this.Text = "Techniki Optymalizacji z użyciem Algorytmów Genetycznych";
             this.Load += new System.EventHandler(this.TechnikiOptymalizacjiAGMainWindow_Load);
@@ -379,8 +385,8 @@ namespace TechnikiOptymalizacjiAG
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IterationThresholdUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeThresholdUpDown)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxAG.ResumeLayout(false);
+            this.groupBoxAG.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MutationProbTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMaxUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMinUpDown)).EndInit();
@@ -403,7 +409,7 @@ namespace TechnikiOptymalizacjiAG
         private System.Windows.Forms.ComboBox FunctionSelectionCombo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button CompareBtn;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxAG;
         private System.Windows.Forms.TrackBar MutationProbTrackbar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CrossingCombo;

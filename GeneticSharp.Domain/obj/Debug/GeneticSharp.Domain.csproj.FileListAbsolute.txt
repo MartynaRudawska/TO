@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.xml
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.dll
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.pdb
@@ -7,3 +8,14 @@ E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Infrast
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.csprojResolveAssemblyReference.cache
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.dll
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.pdb
+=======
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\bin\Debug\GeneticSharp.Infrastructure.Framework.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\bin\Debug\GeneticSharp.Infrastructure.Framework.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\bin\Debug\GeneticSharp.Infrastructure.Framework.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.pdb
+>>>>>>> f3b55ccc05805066536b09b6483065f05dfb1dc4

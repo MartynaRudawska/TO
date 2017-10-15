@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Threading.xml
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Threading.dll
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Threading.pdb
@@ -9,3 +10,16 @@ E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\bin\Debug\Sm
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\obj\Debug\GeneticSharp.Infrastructure.Threading.csprojResolveAssemblyReference.cache
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\obj\Debug\GeneticSharp.Infrastructure.Threading.dll
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Infrastructure.Threading\obj\Debug\GeneticSharp.Infrastructure.Threading.pdb
+=======
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Threading.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Threading.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Threading.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Framework.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\SmartThreadPool.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Framework.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\GeneticSharp.Infrastructure.Framework.xml
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\bin\Debug\SmartThreadPool.pdb
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\obj\Debug\GeneticSharp.Infrastructure.Threading.csprojResolveAssemblyReference.cache
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\obj\Debug\GeneticSharp.Infrastructure.Threading.dll
+C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Infrastructure.Threading\obj\Debug\GeneticSharp.Infrastructure.Threading.pdb
+>>>>>>> f3b55ccc05805066536b09b6483065f05dfb1dc4

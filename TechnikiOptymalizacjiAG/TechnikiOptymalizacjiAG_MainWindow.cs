@@ -66,6 +66,14 @@ namespace TechnikiOptymalizacjiAG
 
         }
 
+
+
+
+
+
+
+
+
         private void CrossingCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
