@@ -98,5 +98,9 @@ namespace TechnikiOptymalizacjiAG
         {
 
         }
+        private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(FunctionSelectionCombo.SelectedItem.ToString());
+        }
     }
 }

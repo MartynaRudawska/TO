@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.xml
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.dll
 E:\sourcefiles\repozytoria\TO\GeneticSharp.Domain\bin\Debug\GeneticSharp.Domain.pdb
@@ -18,4 +17,4 @@ C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Do
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.dll
 C:\Users\Martyna\Documents\Algorytmy\AnalizaTechnikOptymalizacji\GeneticSharp.Domain\obj\Debug\GeneticSharp.Domain.pdb
->>>>>>> f3b55ccc05805066536b09b6483065f05dfb1dc4
+
