@@ -18,6 +18,7 @@ using GeneticSharp.Domain.Reinsertions;
 using GeneticSharp.Domain.Terminations;
 using GeneticSharp.Domain.Populations;
 using System.Threading;
+using GeneticSharp.Runner.GtkApp.Samples;
 
 namespace TechnikiOptymalizacjiAG
 {
@@ -32,7 +33,6 @@ namespace TechnikiOptymalizacjiAG
         private IReinsertion m_reinsertion;
         private ITermination m_termination;
         private IGenerationStrategy m_generationStrategy;
-
         private ISampleController m_sampleController;
         private SampleContext m_sampleContext;
         private Thread m_evolvingThread;
