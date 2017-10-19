@@ -13,7 +13,7 @@ namespace PSOTests
     public partial class Form1 : Form
     {
         #region pola - parametry PSO
-        int dim = 2; // problem dimensions
+        int dim = 1; // problem dimensions
         int numParticles = 5;
         int maxEpochs = 1000;
         double exitError = 0.0; // exit early if reach this error
@@ -31,6 +31,46 @@ namespace PSOTests
             MaxEpochUpDown.Value = maxEpochs;
             ParticleQuantityUpDown.Value = numParticles;
 
+        }
+
+        static double Error(double x)
+        {
+            double trueMin = 0, y = 0;
+            switch (funkcja)
+            {
+
+                case "2*x^2+x-2":
+                    trueMin = -2.125; // @x=-0.25
+                    y = 2 * Math.Pow(x, 2) + x - 2;
+                    break;
+                case "x^2+sin(3 cos(5x))":
+                    trueMin = 0.14112;//@x=0
+                    //trueMin=-0.82205 @x =~= -0.41935
+                    y = Math.Pow(x, 2) + Math.Sin(3 * Math.Cos(5 * x));
+                    break;
+                case "x^4+x^3-7x^2-5x+10":
+                    trueMin = -5.4686;//@x=1.7153
+                    y = Math.Pow(x, 4) + Math.Pow(x, 3) - 7 * Math.Pow(x, 2) - 5 * x + 10;
+                    break;
+                case "sin(2 x)+ln(x^2)":
+                    //BRAK GLOBALNEGO MINIMUM !!!
+                    trueMin = double.MinValue;
+                    y = Math.Sin(2 * x) + Math.Log(Math.Pow(x, 2));
+                    break;
+                case "|(log_{10}(x^2)|":
+                    //BRAK GLOBALNEGO MINIMUM !!!
+                    trueMin = double.MinValue;
+                    y = Math.Abs(Math.Log10(Math.Pow(x, 2)));
+                    break;
+
+                /*case "z = x * exp(-(x ^ 2 + y ^ 2))":
+                    // 0.42888194248035300000 when x0 = -sqrt(2), x1 = 0
+                    trueMin = -0.42888194; // true min for z = x * exp(-(x^2 + y^2))
+                    z = x[0] * Math.Exp(-((x[0] * x[0]) + (x[1] * x[1])));
+                    break;*/
+
+            }
+            return (y - trueMin) * (y - trueMin);
         }
 
         static double Error(double[] x)
