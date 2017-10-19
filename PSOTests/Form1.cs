@@ -54,12 +54,12 @@ namespace PSOTests
                     break;
                 case "sin(2 x)+ln(x^2)":
                     //BRAK GLOBALNEGO MINIMUM !!!
-                    trueMin = double.MinValue;
+                    trueMin = double.MaxValue;
                     y = Math.Sin(2 * x) + Math.Log(Math.Pow(x, 2));
                     break;
                 case "|(log_{10}(x^2)|":
                     //BRAK GLOBALNEGO MINIMUM !!!
-                    trueMin = double.MinValue;
+                    trueMin = double.MaxValue;
                     y = Math.Abs(Math.Log10(Math.Pow(x, 2)));
                     break;
 
@@ -72,7 +72,11 @@ namespace PSOTests
             }
             return (y - trueMin) * (y - trueMin);
         }
-
+        /// <summary>
+        /// Two-dimensional error function
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         static double Error(double[] x)
         {
             double trueMin=0,z=0;
