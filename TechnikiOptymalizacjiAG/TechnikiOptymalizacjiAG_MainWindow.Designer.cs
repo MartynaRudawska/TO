@@ -56,6 +56,11 @@ namespace TechnikiOptymalizacjiAG
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxPSO = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ParticleQuantityUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MaxEpochUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IterationThresholdUpDown)).BeginInit();
@@ -64,6 +69,9 @@ namespace TechnikiOptymalizacjiAG
             ((System.ComponentModel.ISupportInitialize)(this.MutationProbTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMaxUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMinUpDown)).BeginInit();
+            this.groupBoxPSO.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ParticleQuantityUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxEpochUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -369,11 +377,82 @@ namespace TechnikiOptymalizacjiAG
             this.label1.TabIndex = 0;
             this.label1.Text = "Populacja";
             // 
+            // groupBoxPSO
+            // 
+            this.groupBoxPSO.Controls.Add(this.MaxEpochUpDown);
+            this.groupBoxPSO.Controls.Add(this.ParticleQuantityUpDown);
+            this.groupBoxPSO.Controls.Add(this.label13);
+            this.groupBoxPSO.Controls.Add(this.label12);
+            this.groupBoxPSO.Location = new System.Drawing.Point(449, 22);
+            this.groupBoxPSO.Name = "groupBoxPSO";
+            this.groupBoxPSO.Size = new System.Drawing.Size(449, 394);
+            this.groupBoxPSO.TabIndex = 8;
+            this.groupBoxPSO.TabStop = false;
+            this.groupBoxPSO.Text = "PSO";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Ilość cząstek";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(156, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Maksymalna ilość epok (iteracji)";
+            // 
+            // ParticleQuantityUpDown
+            // 
+            this.ParticleQuantityUpDown.Location = new System.Drawing.Point(258, 63);
+            this.ParticleQuantityUpDown.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.ParticleQuantityUpDown.Name = "ParticleQuantityUpDown";
+            this.ParticleQuantityUpDown.Size = new System.Drawing.Size(49, 20);
+            this.ParticleQuantityUpDown.TabIndex = 12;
+            this.ParticleQuantityUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // MaxEpochUpDown
+            // 
+            this.MaxEpochUpDown.Location = new System.Drawing.Point(258, 108);
+            this.MaxEpochUpDown.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.MaxEpochUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.MaxEpochUpDown.Name = "MaxEpochUpDown";
+            this.MaxEpochUpDown.Size = new System.Drawing.Size(52, 20);
+            this.MaxEpochUpDown.TabIndex = 13;
+            this.MaxEpochUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
             // TechnikiOptymalizacjiAGMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 607);
+            this.Controls.Add(this.groupBoxPSO);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxAG);
             this.Name = "TechnikiOptymalizacjiAGMainWindow";
@@ -390,6 +469,10 @@ namespace TechnikiOptymalizacjiAG
             ((System.ComponentModel.ISupportInitialize)(this.MutationProbTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMaxUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopulationMinUpDown)).EndInit();
+            this.groupBoxPSO.ResumeLayout(false);
+            this.groupBoxPSO.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ParticleQuantityUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxEpochUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -426,6 +509,11 @@ namespace TechnikiOptymalizacjiAG
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown IterationThresholdUpDown;
         private System.Windows.Forms.NumericUpDown TimeThresholdUpDown;
+        private System.Windows.Forms.GroupBox groupBoxPSO;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown ParticleQuantityUpDown;
+        private System.Windows.Forms.NumericUpDown MaxEpochUpDown;
     }
 }
 
