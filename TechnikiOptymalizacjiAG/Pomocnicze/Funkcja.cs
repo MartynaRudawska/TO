@@ -9,68 +9,98 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
 {
     class Funkcja
     {
-        double[] Dziedzina;
-        int a, b, c;
-        double y,x, yMin;
+        double pt;
+        double y, x, yMin;
+        double xp,xk;                                   //xp- x początkowy      xk- x końcowy
 
 
+   
+        ///<summary>
+        ///random number from a to b
+        ///</summary>
+        ///<returns></returns>
+        private static double randomPoint(double a, double b)
+        {
+            System.Random r = new System.Random();
+
+            return a + r.NextDouble() * (b - a);
+        }
 
         ///<summary>
         ///Banalny sprawdzający
+        ///w przedziale [-3;3]
         ///</summary>
         ///<returns></returns>
         public Tuple<double, double> Banalny()
         {
             //y=2*x^2+x-2
+            xp = -3;
+            xk = 3;
 
-            y = Math.Pow(x, 2) * 2 + x - 2;   
+            y = Math.Pow(randomPoint(xp, xk), 2) * 2 + randomPoint(xp, xk) - 2;   
+
             return new Tuple<double, double>(yMin, y);
         }
 
         /// <summary>
         /// przykład funkcji kwadratowej Sin Cos
+        /// w przedziale [-1;1]
         /// </summary>
         /// <returns></returns>
         public Tuple<double, double> FKwadSinCos()
         {
             //f(x) = x^2+sin(3 cos(5 x))
-            y = Math.Pow(x, 2) + Math.Sin(3 * Math.Cos(5 * x));
-            Dziedzina = new double[] { -1, 1 } ;
+            y = Math.Pow(randomPoint(xp, xk), 2) + Math.Sin(3 * Math.Cos(5 * randomPoint(xp, xk)));
+            xp = -1;
+            xk = 1;
+
             return new Tuple<double, double>(yMin, y);
             // return yMin;
         }
 
         /// <summary>
         /// Przykład funkcji wielomianowej
+        /// w przedziale [-5;5]
         /// </summary>
         /// <returns>Tuple of xMin, gMin</returns>
         public Tuple<double, double> FWielom()
         {
             //g(x)= x^4+x^3-7x^2-5x+10
-            y = Math.Pow(x, 4) + Math.Pow(x, 3) - 4 * Math.Pow(x, 2) - 3 * x + 5;
+            xp = -5;
+            xk = 5;
+
+            y = Math.Pow(randomPoint(xp, xk), 4) + Math.Pow(randomPoint(xp, xk), 3) - 4 * Math.Pow(randomPoint(xp, xk), 2) - 3 * randomPoint(xp, xk) + 5;
             return new Tuple<double, double>(yMin, y);
             //return gMin;
         }
 
         /// <summary>
         /// Przykład funkcji sin
+        /// w przedziale [-3;3]
         /// </summary>
         /// <returns></returns>
         public Tuple<double, double> FSin()
         {
-            //h(x) = sin(2 x)+ln(x^2)
-            y = Math.Sin(2 * x) + Math.Log(Math.Pow(x, 2));
+            //h(x) = sin(2 x)+log_{10}(x^2)
+            xp = -3;
+            xk = 3;
+
+            y = Math.Sin(2 * randomPoint(xp, xk)) + Math.Log10(Math.Pow(randomPoint(xp, xk), 2));
             return new Tuple<double, double>(yMin, y);
         }
 
         /// <summary>
         /// Przykład funkcji Logarytmicznej
+        /// w przedziale [0;2]
         /// </summary>
         /// <returns></returns>
         public Tuple<double, double> FLogarytmiczne()
         {
             //p(x) = abs(log_{10}(x^2))
-            y = Math.Abs(Math.Log10(Math.Pow(x, 2))) + 0.03;
+            xp = 0;
+            xk = 2;
+
+            y = Math.Abs(Math.Log10(Math.Pow(randomPoint(xp, xk), 2))) + 0.03;
             return new Tuple<double, double>(yMin, y);
             //return yMin;
         }
