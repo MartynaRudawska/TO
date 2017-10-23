@@ -18,18 +18,25 @@ namespace PSOTests
         private short ileCzastek;
         private short maxEpochs;
         private string funkcja;
-
+        private Dictionary<string, Tuple<double, double>> dziedzinyFunkcji = new Dictionary<string, Tuple<double, double>>();
+        //;
         public Form1()
         {
             InitializeComponent();
-        }
+            dziedzinyFunkcji.Add("y=2*x^2+x-2", new Tuple<double, double>(-3, 3));
+            dziedzinyFunkcji.Add("x^2+sin(3 cos(5x))", new Tuple<double, double>(-1, 1));
+            dziedzinyFunkcji.Add("x^4+x^3-7x^2-5x+10", new Tuple<double, double>(-5, 5));
+            dziedzinyFunkcji.Add("sin(2 x)+ln(x^2)", new Tuple<double, double>(-3, 3));
+            dziedzinyFunkcji.Add("|(log_{10}(x^2)|", new Tuple<double, double>(0, 2));
+    }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             MaxEpochUpDown.Value = maxEpochs;
-            ParticleQuantityUpDown.Value = numParticles;
+            ParticleQuantityUpDown.Value = ileCzastek;
 
         }
+
         /*
         static double Error(double x)
         {
@@ -219,7 +226,7 @@ namespace PSOTests
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-            optymalizacja = new PSO(new Tuple<double, double>(minX, maxX), ileCzastek,maxEpochs,funkcja);
+            optymalizacja = new PSO(dziedzinyFunkcji[funkcja], ileCzastek,maxEpochs,funkcja);
             MessageBox.Show(string.Format("Znalezione minimum to {0} z błędem {1}",PSO.PSOSolution().Item1,PSO.PSOSolution().Item2));
         }
 

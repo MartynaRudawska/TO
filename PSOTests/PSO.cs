@@ -11,8 +11,8 @@ namespace PSOTests
         public static int numParticles = 5;
         public static int maxEpochs = 1000;
         public static double exitError = 0.0;
-        public static double minX = -10.0; // problem-dependent
-        public static double maxX = 10.0;
+        public static double minX; // problem-dependent
+        public static double maxX;
         public static string PostacFunkcji;
         Particle[] roj;
         private static double najlepszaPozycja;
