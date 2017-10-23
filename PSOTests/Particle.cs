@@ -13,7 +13,18 @@ namespace PSOTests
         public double[] velocity;
         public double[] bestPosition;
         public double bestError;
-
+        public double pozycja;
+        public double predkosc;
+        public double najlPozycja;
+        public double najlBlad;
+        /// <summary>
+        /// Multi-dimensional 
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="err"></param>
+        /// <param name="vel"></param>
+        /// <param name="bestPos"></param>
+        /// <param name="bestErr"></param>
         public Particle(double[] pos, double err, double[] vel, double[] bestPos, double bestErr)
         {
             this.position = new double[pos.Length];
@@ -26,6 +37,22 @@ namespace PSOTests
             this.bestError = bestErr;
         }
 
+        /// <summary>
+        /// Konstruktor cząstki - Przypadek 1D
+        /// </summary>
+        /// <param name="poz">Pozycja cząstki</param>
+        /// <param name="blad">Błąd</param>
+        /// <param name="v">Prędkość cząstki</param>
+        /// <param name="najPoz">Najlepsza pozycja</param>
+        /// <param name="najBlad">najlepszy błąd</param>
+        public Particle(double poz, double blad, double v, double najPoz, double najBlad)
+        {
+            this.pozycja = poz;
+            this.error = blad;
+            this.predkosc = v;
+            this.najlPozycja = najPoz;
+            this.najlBlad = najBlad;
+        }
         public override string ToString()
         {
             string s = "";

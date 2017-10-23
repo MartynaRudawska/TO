@@ -36,7 +36,7 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             //y=2*x^2+x-2
             xp = -3;
             xk = 3;
-
+            yMin=-2.125; // @x=-0.25
             y = Math.Pow(randomPoint(xp, xk), 2) * 2 + randomPoint(xp, xk) - 2;   
 
             return new Tuple<double, double>(yMin, y);
@@ -53,7 +53,7 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             y = Math.Pow(randomPoint(xp, xk), 2) + Math.Sin(3 * Math.Cos(5 * randomPoint(xp, xk)));
             xp = -1;
             xk = 1;
-
+            yMin = 0.14112;//@x=0
             return new Tuple<double, double>(yMin, y);
             // return yMin;
         }

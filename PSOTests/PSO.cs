@@ -1,40 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PSOTests
 {
-    public partial class Form1 : Form
+    class PSO
     {
-        PSO optymalizacja;
-        private double maxX;
-        private double minX;
-        private short ileCzastek;
-        private short maxEpochs;
-        private string funkcja;
+        public static int numParticles = 5;
+        public static int maxEpochs = 1000;
+        public static double exitError = 0.0;
+        public static double minX = -10.0; // problem-dependent
+        public static double maxX = 10.0;
+        public static string PostacFunkcji;
+        Particle[] roj;
+        private static double najlepszaPozycja;
 
-        public Form1()
+        /// <summary>
+        /// Konstruktor algorytmu PSO
+        /// </summary>
+        /// <param name="dziedzina">Dziedzina funkcji do optymalizacji</param>
+        /// <param name="ilCzastek">Ilość cząstek roju</param>
+        /// <param name="maxEpok">maksymalna ilość epok</param>
+        /// <param name="Funkcja">Tekstowa postać funkcji do optymalizacji</param>
+        public PSO(Tuple<double, double> dziedzina, int ilCzastek, int maxEpok, string Funkcja)
         {
-            InitializeComponent();
+            minX = dziedzina.Item1;
+            maxX = dziedzina.Item2;
+            numParticles = ilCzastek;
+            maxEpochs = maxEpok;
+            PostacFunkcji = Funkcja;
+            roj = new Particle[ilCzastek];
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            MaxEpochUpDown.Value = maxEpochs;
-            ParticleQuantityUpDown.Value = numParticles;
-
-        }
-        /*
-        static double Error(double x)
+        private static double Error(double x)
         {
             double trueMin = 0, y = 0;
-            switch (funkcja)
+            switch (PostacFunkcji)
             {
 
                 case "2*x^2+x-2":
@@ -65,22 +67,22 @@ namespace PSOTests
             }
             return (y - trueMin) * (y - trueMin);
         }
-        */
-        /*
-        static double Solve(int numParticles, double minX, double maxX, int maxEpochs, double exitError)
+
+
+        private static double Solve(int numParticles, double minX, double maxX, int maxEpochs, double exitError)
         {
-            
+
             Random rnd = new Random(0);
 
             Particle[] swarm = new Particle[numParticles];
-            double bestGlobalPosition= double.MaxValue; ; // Najlepsza pozycja znaleziona przez którąkolwiek cząstkę roju
+            double bestGlobalPosition = double.MaxValue; ; // Najlepsza pozycja znaleziona przez którąkolwiek cząstkę roju
             double bestGlobalError = double.MaxValue; // im mniejsza tym lepsza
 
             // Inicjalizacja roju
             for (int i = 0; i < swarm.Length; ++i)
             {
                 double randomPosition;
-                    randomPosition = (maxX - minX) * rnd.NextDouble() + minX; // 
+                randomPosition = (maxX - minX) * rnd.NextDouble() + minX; // 
 
                 double error = Error(randomPosition);
                 double randomVelocity;
@@ -88,14 +90,14 @@ namespace PSOTests
                 double lo = minX * 0.1;
                 double hi = maxX * 0.1;
                 randomVelocity = (hi - lo) * rnd.NextDouble() + lo;
-                
+
                 swarm[i] = new Particle(randomPosition, error, randomVelocity, randomPosition, error);
 
                 // Sprawdzenie, czy cząstka ma najlepszą pozycję / rozwiązanie
                 if (swarm[i].error < bestGlobalError)
                 {
                     bestGlobalError = swarm[i].error;
-                    bestGlobalPosition=swarm[i].pozycja;
+                    bestGlobalPosition = swarm[i].pozycja;
                 }
             }
 
@@ -116,25 +118,25 @@ namespace PSOTests
             {
                 for (int i = 0; i < swarm.Length; ++i) // dla każdej cząstki
                 {
-                    Particle currP = swarm[i]; 
+                    Particle currP = swarm[i];
 
-                    
-                        r1 = rnd.NextDouble();
-                        r2 = rnd.NextDouble();
 
-                        newVelocity = (w * currP.predkosc) +
-                          (c1 * r1 * (currP.najlPozycja - currP.pozycja)) +
-                          (c2 * r2 * (bestGlobalPosition - currP.pozycja));
-                    
-                  currP.predkosc = newVelocity;
+                    r1 = rnd.NextDouble();
+                    r2 = rnd.NextDouble();
+
+                    newVelocity = (w * currP.predkosc) +
+                      (c1 * r1 * (currP.najlPozycja - currP.pozycja)) +
+                      (c2 * r2 * (bestGlobalPosition - currP.pozycja));
+
+                    currP.predkosc = newVelocity;
 
                     // new position
-                    
-                        newPosition = currP.pozycja + newVelocity;
-                        if (newPosition < minX)
-                            newPosition = minX;
-                        else if (newPosition > maxX)
-                            newPosition = maxX;
+
+                    newPosition = currP.pozycja + newVelocity;
+                    if (newPosition < minX)
+                        newPosition = minX;
+                    else if (newPosition > maxX)
+                        newPosition = maxX;
 
                     currP.pozycja = newPosition;
 
@@ -143,7 +145,7 @@ namespace PSOTests
 
                     if (newError < currP.bestError)
                     {
-                        currP.najlPozycja=newPosition;
+                        currP.najlPozycja = newPosition;
                         currP.bestError = newError;
                     }
 
@@ -157,7 +159,7 @@ namespace PSOTests
                     double die = rnd.NextDouble();
                     if (die < probDeath)
                     {
-                        
+
                         for (int j = 0; j < currP.position.Length; ++j)
                             currP.position[j] = (maxX - minX) * rnd.NextDouble() + minX;
                         currP.error = Error(currP.pozycja);
@@ -167,11 +169,11 @@ namespace PSOTests
                         if (currP.error < bestGlobalError) //przypadkowe trafienie w globalne minimum?
                         {
                             bestGlobalError = currP.error;
-                            bestGlobalPosition=currP.pozycja;
+                            bestGlobalPosition = currP.pozycja;
                         }
                     }
 
-                } 
+                }
                 ++epoch;
             } // while
 
@@ -180,57 +182,15 @@ namespace PSOTests
                 Console.WriteLine(swarm[i].ToString());
 
             double result;
-            result=bestGlobalPosition;
+            result = bestGlobalPosition;
             return result;
             // Solve
         }
-
-
-        private void ParticleSwarm()
+        public static Tuple<double, double> PSOSolution()
         {
-            Console.WriteLine("\nSetting problem dimension to " + dim);
-            Console.WriteLine("Setting numParticles = " + numParticles);
-            Console.WriteLine("Setting maxEpochs = " + maxEpochs);
-            Console.WriteLine("Setting early exit error = " + exitError.ToString("F4"));
-            Console.WriteLine("Setting minX, maxX = " + minX.ToString("F1") + " " + maxX.ToString("F1"));
-
-            double bestPosition = Solve(dim, numParticles, minX, maxX, maxEpochs, exitError);
-            double bestError = Error(bestPosition);
-
-            Console.WriteLine("Best position/solution found:");
-            
-                Console.Write("x" + " = ");
-                Console.WriteLine(bestPosition.ToString("F6") + " ");
-            
-            Console.WriteLine("");
-            Console.Write("Final best error = ");
-            Console.WriteLine(bestError.ToString("F5"));
-        }
-        */
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            najlepszaPozycja = Solve(numParticles, minX,maxX, maxEpochs, exitError);
+            return new Tuple<double, double>(najlepszaPozycja, Error(najlepszaPozycja));
         }
 
-        private void ParticleQuantityUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            ileCzastek = Convert.ToInt16(ParticleQuantityUpDown.Value);
-        }
-
-        private void StartBtn_Click(object sender, EventArgs e)
-        {
-            optymalizacja = new PSO(new Tuple<double, double>(minX, maxX), ileCzastek,maxEpochs,funkcja);
-            MessageBox.Show(string.Format("Znalezione minimum to {0} z błędem {1}",PSO.PSOSolution().Item1,PSO.PSOSolution().Item2));
-        }
-
-        private void MaxEpochUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            maxEpochs = Convert.ToInt16(MaxEpochUpDown.Value);
-        }
-
-        private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            funkcja = FunctionSelectionCombo.SelectedItem.ToString();
-        }
     }
 }
