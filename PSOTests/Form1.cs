@@ -23,7 +23,7 @@ namespace PSOTests
         public Form1()
         {
             InitializeComponent();
-            dziedzinyFunkcji.Add("y=2*x^2+x-2", new Tuple<double, double>(-3, 3));
+            dziedzinyFunkcji.Add("2*x^2+x-2", new Tuple<double, double>(-3, 3));
             dziedzinyFunkcji.Add("x^2+sin(3 cos(5x))", new Tuple<double, double>(-1, 1));
             dziedzinyFunkcji.Add("x^4+x^3-7x^2-5x+10", new Tuple<double, double>(-5, 5));
             dziedzinyFunkcji.Add("sin(2 x)+ln(x^2)", new Tuple<double, double>(-3, 3));
@@ -32,8 +32,8 @@ namespace PSOTests
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MaxEpochUpDown.Value = maxEpochs;
-            ParticleQuantityUpDown.Value = ileCzastek;
+            MaxEpochUpDown.Value = MaxEpochUpDown.Minimum;
+            ParticleQuantityUpDown.Value=ParticleQuantityUpDown.Minimum;
 
         }
 
@@ -226,8 +226,15 @@ namespace PSOTests
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-            optymalizacja = new PSO(dziedzinyFunkcji[funkcja], ileCzastek,maxEpochs,funkcja);
-            MessageBox.Show(string.Format("Znalezione minimum to {0} z błędem {1}",PSO.PSOSolution().Item1,PSO.PSOSolution().Item2));
+            //string f = FunctionSelectionCombo.SelectedItem.ToString();
+            if (!String.IsNullOrEmpty(funkcja)&&!funkcja.Equals("Proszę wybrać funkcję do optymalizacji"))
+            {
+                ileCzastek = Convert.ToInt16(ParticleQuantityUpDown.Value);
+                maxEpochs = Convert.ToInt16(MaxEpochUpDown.Value);
+                optymalizacja = new PSO(dziedzinyFunkcji[funkcja], ileCzastek, maxEpochs, funkcja);
+                MessageBox.Show(string.Format("Znalezione minimum to {0} z błędem {1}", PSO.PSOSolution().Item1, PSO.PSOSolution().Item2),"Rezultat optymalizacji",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Nie wybrano funkcji do optymalizacji","BŁĄD!",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
 
         private void MaxEpochUpDown_ValueChanged(object sender, EventArgs e)

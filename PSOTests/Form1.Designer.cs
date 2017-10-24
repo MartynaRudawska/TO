@@ -50,8 +50,9 @@
             "|(log_{10}(x^2)|"});
             this.FunctionSelectionCombo.Location = new System.Drawing.Point(219, 155);
             this.FunctionSelectionCombo.Name = "FunctionSelectionCombo";
-            this.FunctionSelectionCombo.Size = new System.Drawing.Size(196, 21);
+            this.FunctionSelectionCombo.Size = new System.Drawing.Size(217, 21);
             this.FunctionSelectionCombo.TabIndex = 4;
+            this.FunctionSelectionCombo.Text = "Proszę wybrać funkcję do optymalizacji";
             this.FunctionSelectionCombo.SelectedIndexChanged += new System.EventHandler(this.FunctionSelectionCombo_SelectedIndexChanged);
             // 
             // label1

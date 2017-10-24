@@ -62,10 +62,8 @@ namespace PSOTests
                     trueMin = double.MaxValue;
                     y = Math.Abs(Math.Log10(Math.Pow(x, 2)));
                     break;
-
-
             }
-            return (y - trueMin) * (y - trueMin);
+            return Math.Sqrt((y - trueMin) * (y - trueMin));
         }
 
 
@@ -75,7 +73,7 @@ namespace PSOTests
             Random rnd = new Random(0);
 
             Particle[] swarm = new Particle[numParticles];
-            double bestGlobalPosition = double.MaxValue; ; // Najlepsza pozycja znaleziona przez którąkolwiek cząstkę roju
+            double bestGlobalPosition = new double();//double.MaxValue; // Najlepsza pozycja znaleziona przez którąkolwiek cząstkę roju
             double bestGlobalError = double.MaxValue; // im mniejsza tym lepsza
 
             // Inicjalizacja roju
@@ -160,10 +158,10 @@ namespace PSOTests
                     if (die < probDeath)
                     {
 
-                        for (int j = 0; j < currP.position.Length; ++j)
-                            currP.position[j] = (maxX - minX) * rnd.NextDouble() + minX;
+                        //for (int j = 0; j < currP.position.Length; ++j)
+                        currP.pozycja = (maxX - minX) * rnd.NextDouble() + minX;
                         currP.error = Error(currP.pozycja);
-                        currP.position.CopyTo(currP.bestPosition, 0);
+                        currP.najlPozycja = currP.pozycja;// currP.position.CopyTo(currP.bestPosition, 0);
                         currP.bestError = currP.error;
 
                         if (currP.error < bestGlobalError) //przypadkowe trafienie w globalne minimum?
