@@ -24,7 +24,7 @@ namespace TechnikiOptymalizacjiAG
 {
     public partial class TechnikiOptymalizacjiAGMainWindow : Form
     {
-        #region pola
+        #region pola genetyczny
         private GeneticAlgorithm m_ga;
         private IFitness m_fitness;
         private ISelection m_selection;
@@ -41,17 +41,72 @@ namespace TechnikiOptymalizacjiAG
         /// <summary>
         /// Konstruktor
         /// </summary>
+        /// 
+
+        #region pola PSO
+        PSO optymalizacja;
+        private double maxX;
+        private double minX;
+        private short ileCzastek;
+        private short maxEpochs;
+        private string funkcja;
+        private Dictionary<string, Tuple<double, double>> dziedzinyFunkcji = new Dictionary<string, Tuple<double, double>>();
+        #endregion
+        #region konstruktor
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// 
+
+
         public TechnikiOptymalizacjiAGMainWindow()
         {
             InitializeComponent();
+            InitializeComponent();
+            dziedzinyFunkcji.Add("2*x^2+x-2", new Tuple<double, double>(-3, 3));
+            dziedzinyFunkcji.Add("x^2+sin(3 cos(5x))", new Tuple<double, double>(-1, 1));
+            dziedzinyFunkcji.Add("x^4+x^3-7x^2-5x+10", new Tuple<double, double>(-5, 5));
+            dziedzinyFunkcji.Add("sin(2 x)+log_{10}(x^2)", new Tuple<double, double>(-7, 7));
+            dziedzinyFunkcji.Add("|(log_{10}(x^2)|", new Tuple<double, double>(0, 2));
         }
         #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
+            MaxEpochUpDown.Value = MaxEpochUpDown.Minimum;
+            ParticleQuantityUpDown.Value = ParticleQuantityUpDown.Minimum;
+        }
 
+        private void ParticleQuantityUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            ileCzastek = Convert.ToInt16(ParticleQuantityUpDown.Value);
+        }
+
+        private void StartBtn_Click(object sender, EventArgs e)
+        {
+            //string f = FunctionSelectionCombo.SelectedItem.ToString();
+            if (!String.IsNullOrEmpty(funkcja) && !funkcja.Equals("Proszę wybrać funkcję do optymalizacji"))
+            {
+                ileCzastek = Convert.ToInt16(ParticleQuantityUpDown.Value);
+                maxEpochs = Convert.ToInt16(MaxEpochUpDown.Value);
+                optymalizacja = new PSO(dziedzinyFunkcji[funkcja], ileCzastek, maxEpochs, funkcja);
+                MessageBox.Show(string.Format("Znalezione minimum to {0} z błędem {1}", PSO.PSOSolution().Item1, PSO.PSOSolution().Item2), "Rezultat optymalizacji", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Nie wybrano funkcji do optymalizacji", "BŁĄD!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void MaxEpochUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            maxEpochs = Convert.ToInt16(MaxEpochUpDown.Value);
+        }
+
+        private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            funkcja = FunctionSelectionCombo.SelectedItem.ToString();
         }
 
         #region Metody Algorytmu Genetycznego
+        /*
+
         /// <summary>
         /// Uruchamianie wątku, w którym pracuje Algorytm Genetyczny
         /// </summary>
@@ -68,7 +123,8 @@ namespace TechnikiOptymalizacjiAG
         /// </summary>
         private void StartGA()
         {
-            RunGA(() =>
+           
+                RunGA(() =>
             {
                 m_sampleController.Reset();
                 m_sampleContext.Population = new Population(
@@ -102,6 +158,7 @@ namespace TechnikiOptymalizacjiAG
                 m_sampleController.ConfigGA(m_ga);
                 m_ga.Start();
             });
+            
         }
         /// <summary>
         /// Wznawianie Algorytmu Genetycznego
@@ -171,10 +228,10 @@ namespace TechnikiOptymalizacjiAG
         #endregion
 
         #region Event Handlers
-        private void StartBtn_Click(object sender, EventArgs e)
-        {
 
-        }
+
+    */
+
 
         private void CompareBtn_Click(object sender, EventArgs e)
         {
@@ -235,10 +292,10 @@ namespace TechnikiOptymalizacjiAG
         {
 
         }
-        private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(FunctionSelectionCombo.SelectedItem.ToString());
-        }
+        /* private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             MessageBox.Show(FunctionSelectionCombo.SelectedItem.ToString());
+         }*/
         #endregion
     }
 }

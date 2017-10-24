@@ -7,3 +7,12 @@ E:\sourcefiles\repozytoria\TO\PSOTests\obj\Debug\PSOTests.Properties.Resources.r
 E:\sourcefiles\repozytoria\TO\PSOTests\obj\Debug\PSOTests.csproj.GenerateResource.Cache
 E:\sourcefiles\repozytoria\TO\PSOTests\obj\Debug\PSOTests.exe
 E:\sourcefiles\repozytoria\TO\PSOTests\obj\Debug\PSOTests.pdb
+C:\Users\Ania\Documents\TO\PSOTests\bin\Debug\PSOTests.exe.config
+C:\Users\Ania\Documents\TO\PSOTests\obj\Debug\PSOTests.exe
+C:\Users\Ania\Documents\TO\PSOTests\obj\Debug\PSOTests.pdb
+C:\Users\Ania\Documents\TO\PSOTests\bin\Debug\PSOTests.exe
+C:\Users\Ania\Documents\TO\PSOTests\bin\Debug\PSOTests.pdb
+C:\Users\Ania\Documents\TO\PSOTests\obj\Debug\PSOTests.csprojResolveAssemblyReference.cache
+C:\Users\Ania\Documents\TO\PSOTests\obj\Debug\PSOTests.Form1.resources
+C:\Users\Ania\Documents\TO\PSOTests\obj\Debug\PSOTests.Properties.Resources.resources
+C:\Users\Ania\Documents\TO\PSOTests\obj\Debug\PSOTests.csproj.GenerateResource.Cache

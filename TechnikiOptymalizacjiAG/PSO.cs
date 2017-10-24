@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSOTests
+namespace TechnikiOptymalizacjiAG
 {
     class PSO
     {
@@ -62,10 +62,10 @@ namespace PSOTests
                     trueMin = -5.4686;//@x=1.7153
                     y = Math.Pow(x, 4) + Math.Pow(x, 3) - 7 * Math.Pow(x, 2) - 5 * x + 10;
                     break;
-                case "sin(2 x)+ln(x^2)":
+                case "sin(2 x)+log_{10}(x^2)":
                     //BRAK GLOBALNEGO MINIMUM !!!
                     trueMin = double.MaxValue;
-                    y = Math.Sin(2 * x) + Math.Log(Math.Pow(x, 2));
+                    y = Math.Sin(2 * x) + Math.Log10(Math.Pow(x, 2));
                     break;
                 case "|(log_{10}(x^2)|":
                     //BRAK GLOBALNEGO MINIMUM !!!

@@ -46,8 +46,8 @@
             "2*x^2+x-2",
             "x^2+sin(3 cos(5x))",
             "x^4+x^3-7x^2-5x+10",
-            "sin(2 x)+ln(x^2)",
-            "|(log_{10}(x^2)|"});
+            "sin(2 x)+log(x^2)",
+            "|(log(x^2)|"});
             this.FunctionSelectionCombo.Location = new System.Drawing.Point(219, 155);
             this.FunctionSelectionCombo.Name = "FunctionSelectionCombo";
             this.FunctionSelectionCombo.Size = new System.Drawing.Size(217, 21);

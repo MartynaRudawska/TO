@@ -28,7 +28,7 @@ namespace GeneticSharp.Runner.GtkApp.Samples
 
         public Pixmap Buffer { get; set; }
 
-        public Pango.Layout Layout { get; set; }
+       // public Pango.Layout Layout { get; set; }
 
         public Population Population { get; set; }
 
@@ -38,14 +38,14 @@ namespace GeneticSharp.Runner.GtkApp.Samples
         {
             m_lastTextY = 0;
         }
-
+/*
         public void WriteText(string text, params object[] args)
         {
             Layout.SetMarkup("<span color='gray'>{0}</span>".With(string.Format(CultureInfo.InvariantCulture, text, args)));
             Buffer.DrawLayout(GC, 0, m_lastTextY, Layout);
             m_lastTextY += 20;
         }
-
+        */
         public Gdk.GC CreateGC(Gdk.Color foregroundColor)
         {
             var gc = new Gdk.GC(GdkWindow);

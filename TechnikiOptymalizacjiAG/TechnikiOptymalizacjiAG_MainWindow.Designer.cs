@@ -57,8 +57,8 @@ namespace TechnikiOptymalizacjiAG
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxPSO = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.ParticleQuantityUpDown = new System.Windows.Forms.NumericUpDown();
             this.MaxEpochUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
@@ -81,9 +81,9 @@ namespace TechnikiOptymalizacjiAG
             this.groupBox2.Controls.Add(this.FunctionSelectionCombo);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.CompareBtn);
-            this.groupBox2.Location = new System.Drawing.Point(75, 423);
+            this.groupBox2.Location = new System.Drawing.Point(21, 422);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(823, 161);
+            this.groupBox2.Size = new System.Drawing.Size(693, 161);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Warunki Funkcji";
@@ -99,7 +99,7 @@ namespace TechnikiOptymalizacjiAG
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(385, 20);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(419, 135);
+            this.groupBox3.Size = new System.Drawing.Size(294, 135);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Warunek końca";
@@ -107,7 +107,7 @@ namespace TechnikiOptymalizacjiAG
             // IterationThresholdRadioBtn
             // 
             this.IterationThresholdRadioBtn.AutoSize = true;
-            this.IterationThresholdRadioBtn.Location = new System.Drawing.Point(208, 63);
+            this.IterationThresholdRadioBtn.Location = new System.Drawing.Point(159, 65);
             this.IterationThresholdRadioBtn.Name = "IterationThresholdRadioBtn";
             this.IterationThresholdRadioBtn.Size = new System.Drawing.Size(33, 17);
             this.IterationThresholdRadioBtn.TabIndex = 7;
@@ -138,7 +138,7 @@ namespace TechnikiOptymalizacjiAG
             // 
             // IterationThresholdUpDown
             // 
-            this.IterationThresholdUpDown.Location = new System.Drawing.Point(247, 63);
+            this.IterationThresholdUpDown.Location = new System.Drawing.Point(198, 65);
             this.IterationThresholdUpDown.Name = "IterationThresholdUpDown";
             this.IterationThresholdUpDown.Size = new System.Drawing.Size(71, 20);
             this.IterationThresholdUpDown.TabIndex = 3;
@@ -156,7 +156,7 @@ namespace TechnikiOptymalizacjiAG
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 32);
+            this.label10.Location = new System.Drawing.Point(195, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 1;
@@ -192,8 +192,9 @@ namespace TechnikiOptymalizacjiAG
             "|(log_{10}(x^2)|"});
             this.FunctionSelectionCombo.Location = new System.Drawing.Point(105, 52);
             this.FunctionSelectionCombo.Name = "FunctionSelectionCombo";
-            this.FunctionSelectionCombo.Size = new System.Drawing.Size(121, 21);
+            this.FunctionSelectionCombo.Size = new System.Drawing.Size(222, 21);
             this.FunctionSelectionCombo.TabIndex = 3;
+            this.FunctionSelectionCombo.Text = "Proszę wybrać funkcję do optymalizacji";
             this.FunctionSelectionCombo.SelectedIndexChanged += new System.EventHandler(this.FunctionSelectionCombo_SelectedIndexChanged);
             // 
             // label7
@@ -229,7 +230,7 @@ namespace TechnikiOptymalizacjiAG
             this.groupBoxAG.Controls.Add(this.label3);
             this.groupBoxAG.Controls.Add(this.label2);
             this.groupBoxAG.Controls.Add(this.label1);
-            this.groupBoxAG.Location = new System.Drawing.Point(75, 22);
+            this.groupBoxAG.Location = new System.Drawing.Point(21, 21);
             this.groupBoxAG.Name = "groupBoxAG";
             this.groupBoxAG.Size = new System.Drawing.Size(343, 394);
             this.groupBoxAG.TabIndex = 6;
@@ -264,10 +265,11 @@ namespace TechnikiOptymalizacjiAG
             "Davisa Zamówienie (OX1)",
             "Zwrotnicowy (OX2)",
             "Pozycyjny (POS)"});
-            this.CrossingCombo.Location = new System.Drawing.Point(99, 222);
+            this.CrossingCombo.Location = new System.Drawing.Point(56, 222);
             this.CrossingCombo.Name = "CrossingCombo";
-            this.CrossingCombo.Size = new System.Drawing.Size(121, 21);
+            this.CrossingCombo.Size = new System.Drawing.Size(228, 21);
             this.CrossingCombo.TabIndex = 12;
+            this.CrossingCombo.Text = "Proszę wybrać krzyżowanie do optymalizacji";
             this.CrossingCombo.SelectedIndexChanged += new System.EventHandler(this.CrossingCombo_SelectedIndexChanged);
             // 
             // SelectionCombo
@@ -276,10 +278,11 @@ namespace TechnikiOptymalizacjiAG
             this.SelectionCombo.Items.AddRange(new object[] {
             "Ruletka",
             "Turniej"});
-            this.SelectionCombo.Location = new System.Drawing.Point(99, 144);
+            this.SelectionCombo.Location = new System.Drawing.Point(56, 144);
             this.SelectionCombo.Name = "SelectionCombo";
-            this.SelectionCombo.Size = new System.Drawing.Size(121, 21);
+            this.SelectionCombo.Size = new System.Drawing.Size(228, 21);
             this.SelectionCombo.TabIndex = 11;
+            this.SelectionCombo.Text = "Proszę wybrać selekcje do optymalizacji";
             this.SelectionCombo.SelectedIndexChanged += new System.EventHandler(this.SelectionCombo_SelectedIndexChanged);
             // 
             // PopulationMaxUpDown
@@ -383,21 +386,12 @@ namespace TechnikiOptymalizacjiAG
             this.groupBoxPSO.Controls.Add(this.ParticleQuantityUpDown);
             this.groupBoxPSO.Controls.Add(this.label13);
             this.groupBoxPSO.Controls.Add(this.label12);
-            this.groupBoxPSO.Location = new System.Drawing.Point(449, 22);
+            this.groupBoxPSO.Location = new System.Drawing.Point(376, 22);
             this.groupBoxPSO.Name = "groupBoxPSO";
-            this.groupBoxPSO.Size = new System.Drawing.Size(449, 394);
+            this.groupBoxPSO.Size = new System.Drawing.Size(338, 394);
             this.groupBoxPSO.TabIndex = 8;
             this.groupBoxPSO.TabStop = false;
             this.groupBoxPSO.Text = "PSO";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(25, 61);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Ilość cząstek";
             // 
             // label13
             // 
@@ -408,26 +402,36 @@ namespace TechnikiOptymalizacjiAG
             this.label13.TabIndex = 11;
             this.label13.Text = "Maksymalna ilość epok (iteracji)";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Ilość cząstek";
+            // 
             // ParticleQuantityUpDown
             // 
-            this.ParticleQuantityUpDown.Location = new System.Drawing.Point(258, 63);
+            this.ParticleQuantityUpDown.Location = new System.Drawing.Point(228, 62);
             this.ParticleQuantityUpDown.Minimum = new decimal(new int[] {
             5,
             0,
             0,
             0});
             this.ParticleQuantityUpDown.Name = "ParticleQuantityUpDown";
-            this.ParticleQuantityUpDown.Size = new System.Drawing.Size(49, 20);
+            this.ParticleQuantityUpDown.Size = new System.Drawing.Size(71, 20);
             this.ParticleQuantityUpDown.TabIndex = 12;
             this.ParticleQuantityUpDown.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
+            this.ParticleQuantityUpDown.ValueChanged += new System.EventHandler(this.ParticleQuantityUpDown_ValueChanged);
             // 
             // MaxEpochUpDown
             // 
-            this.MaxEpochUpDown.Location = new System.Drawing.Point(258, 108);
+            this.MaxEpochUpDown.Location = new System.Drawing.Point(228, 110);
             this.MaxEpochUpDown.Maximum = new decimal(new int[] {
             2000,
             0,
@@ -439,19 +443,20 @@ namespace TechnikiOptymalizacjiAG
             0,
             0});
             this.MaxEpochUpDown.Name = "MaxEpochUpDown";
-            this.MaxEpochUpDown.Size = new System.Drawing.Size(52, 20);
+            this.MaxEpochUpDown.Size = new System.Drawing.Size(71, 20);
             this.MaxEpochUpDown.TabIndex = 13;
             this.MaxEpochUpDown.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
+            this.MaxEpochUpDown.ValueChanged += new System.EventHandler(this.MaxEpochUpDown_ValueChanged);
             // 
             // TechnikiOptymalizacjiAGMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 607);
+            this.ClientSize = new System.Drawing.Size(733, 607);
             this.Controls.Add(this.groupBoxPSO);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxAG);
@@ -512,8 +517,8 @@ namespace TechnikiOptymalizacjiAG
         private System.Windows.Forms.GroupBox groupBoxPSO;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown ParticleQuantityUpDown;
         private System.Windows.Forms.NumericUpDown MaxEpochUpDown;
+        private System.Windows.Forms.NumericUpDown ParticleQuantityUpDown;
     }
 }
 

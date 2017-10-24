@@ -13,7 +13,7 @@ namespace GeneticSharp.Runner.GtkApp.Samples
     /// <summary>
     /// Base class for sample controllers.
     /// </summary>
-    public abstract class SampleControllerBase : ISampleController
+    public abstract class SampleControllerBase //: ISampleController
     {
         #region Events
         /// <summary>
