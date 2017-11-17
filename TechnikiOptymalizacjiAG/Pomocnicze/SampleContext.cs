@@ -11,35 +11,35 @@ namespace GeneticSharp.Runner.GtkApp.Samples
         #region Fields
         private int m_lastTextY = 0;
         #endregion
-
+        /*
         public SampleContext(Gdk.Window gdkWindow, Gtk.Window gtkWindow)
         {
             GdkWindow = gdkWindow;
             GtkWindow = gtkWindow;
-        }
+        }*/
 
         public GeneticAlgorithm GA { get; set; }
-
+        /*
         public Gdk.Window GdkWindow { get; private set; }
 
         public Gtk.Window GtkWindow { get; private set; }
-
-        public Gdk.GC GC { get; set; }
+        */
+      //  public Gdk.GC GC { get; set; }
 
         public Pixmap Buffer { get; set; }
 
-        public Pango.Layout Layout { get; set; }
+       // public Pango.Layout Layout { get; set; }
 
         public Population Population { get; set; }
 
-        public Rectangle DrawingArea { get; set; }
+      //  public Rectangle DrawingArea { get; set; }
 
         public void Reset()
         {
             m_lastTextY = 0;
         }
 
-        public void WriteText(string text, params object[] args)
+    /*    public void WriteText(string text, params object[] args)
         {
             Layout.SetMarkup("<span color='gray'>{0}</span>".With(string.Format(CultureInfo.InvariantCulture, text, args)));
             Buffer.DrawLayout(GC, 0, m_lastTextY, Layout);
@@ -55,6 +55,6 @@ namespace GeneticSharp.Runner.GtkApp.Samples
             gc.SetLineAttributes(1, LineStyle.OnOffDash, CapStyle.Projecting, JoinStyle.Round);
 
             return gc;
-        }
+        }*/
     }
 }
