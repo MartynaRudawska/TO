@@ -50,6 +50,7 @@ namespace PSOTests
 
         private Dictionary<string, Tuple<double, double>> dziedzinyFunkcji = new Dictionary<string, Tuple<double, double>>();
         //;
+
         public Form1()
         {
             InitializeComponent();
