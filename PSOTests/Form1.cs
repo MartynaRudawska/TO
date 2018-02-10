@@ -1,33 +1,62 @@
-﻿using System;
+﻿using ILNumerics;
+using ILNumerics.Drawing;
+using ILNumerics.Drawing.Plotting;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Data;
+using System.Text;
+using PSOTests.Funkcje;
 
 namespace PSOTests
 {
     public partial class Form1 : Form
     {
         PSO optymalizacja;
-        private double maxX;
-        private double minX;
+        private static ILScene scena;
+        private bool _threadPaused = false;
+        private bool thesame = false;
+        private Thread animace;
+        private ILArray<float> data;
+        private double maxX { get; set; }
+        private double minX { get; set; }
         private short ileCzastek;
         private short maxEpochs;
         private string funkcja;
+        private int nrIteracji = 50;
+        private Populacja population { get; set; }
+        private ILSurface surface;
+        private Populacja populationestore { get; set; }
+        private int i = 0;
+        private int j = 0;
+        private float[] avfitness = new float[1];
+        private float[] avbfitness = new float[1];
+        private float[] avvelocity = new float[1];
+        private int dim = 2;
+        private int modelpopulationSize = 1000;
+        private int testnumber = 100;
+        private double error = 0.005;
+        private int PopulationSize = 20;
+        private int numberIterations = 50;
+        private double inertiaw = 0.75;
+        private Populacja modelpopulation;
+        private System.Windows.Forms.Button thesamepopulation;
+
+
         private Dictionary<string, Tuple<double, double>> dziedzinyFunkcji = new Dictionary<string, Tuple<double, double>>();
         //;
         public Form1()
         {
             InitializeComponent();
-            dziedzinyFunkcji.Add("2*x^2+x-2", new Tuple<double, double>(-3, 3));
-            dziedzinyFunkcji.Add("x^2+sin(3 cos(5x))", new Tuple<double, double>(-1, 1));
-            dziedzinyFunkcji.Add("x^4+x^3-7x^2-5x+10", new Tuple<double, double>(-5, 5));
-            dziedzinyFunkcji.Add("sin(2 x)+ln(x^2)", new Tuple<double, double>(-3, 3));
-            dziedzinyFunkcji.Add("|(log_{10}(x^2)|", new Tuple<double, double>(0, 2));
+            dziedzinyFunkcji.Add(" DeJong1 ", new Tuple<double, double>(-5.12, 5.12));
+            dziedzinyFunkcji.Add(" Rosenbrock)", new Tuple<double, double>(-2.048, 2.048));
+            dziedzinyFunkcji.Add("Rastrigin", new Tuple<double, double>(-5.12, 5.12));
+            dziedzinyFunkcji.Add("Schwefel)", new Tuple<double, double>(-500, 500));
     }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -182,7 +211,7 @@ namespace PSOTests
                 ++epoch;
             } // while
 
-            // Rój po przejściu wszystkich epok
+            // Rój po przejściu wszystkich iteracji
             for (int i = 0; i < swarm.Length; ++i)
                 Console.WriteLine(swarm[i].ToString());
 
@@ -214,6 +243,115 @@ namespace PSOTests
             Console.WriteLine(bestError.ToString("F5"));
         }
         */
+
+        public void ShowParticleMove(object obj)
+        {
+            List<Populacja> list = (List<Populacja>)obj;
+
+            int i = 0;
+            foreach (Populacja item in list)
+            {
+
+                surface = new ILSurface(data);
+                surface.Fill.Markable = false;
+                surface.Wireframe.Markable = false;
+                this.ShowParticleOnGraph(item, 8);
+                //this.ShowGraphChart(item);
+                //this.ShowCharts(item);
+                //this.RefreshModel();
+
+                if (i < nrIteracji)
+                {
+                    int k = i + 1;
+                    for (int j = 0; j < item.NajlepszaPozycja.Length; ++j)
+                    {
+                        Invoke(new Action(() => richTextBox1.AppendText("Iteracja: " + k.ToString() + "  x" + "[" + j + "]" + "   " + item.NajlepszaPozycja[j] + "\n")));
+                    }
+                    Invoke(new Action(() => richTextBox1.AppendText("    Minimum: " + item.NajlepszaFitness + "\n")));
+                    Invoke(new Action(() => richTextBox1.ScrollToCaret()));
+
+                }
+                // Thread.Sleep(1000);
+
+
+                if (_threadPaused)
+                    wh.WaitOne();
+                ++i;
+            }
+            //Invoke(new Action(() => playPausePictureBox.Visible = false));
+
+        }
+
+        private void ShowParticleOnGraph(Populacja tmp, int size = 10)
+        {
+            double best = tmp.population.Min(x => x.fitnessValue);
+            foreach (Particle item in tmp.population)
+            {
+                ILArray<float> coords = new float[3];
+                coords[0] = (float)item.position[0];
+                coords[1] = (float)item.position[1];
+                coords[2] = (float)item.fitnessValue;// +1000;
+                ILPoints bod = surface.Add(Shapes.Point);
+                //surface.Colormap = Colormaps.Hot;
+
+                if (item.fitnessValue == best)
+                {
+                    bod.Color = Color.Red;
+                    bod.Size = 10;
+                }
+                else
+                {
+                    bod.Color = Color.Black;
+                    bod.Size = size;
+                }
+
+                bod.Positions.Update(coords);
+                surface.Add(bod);
+            }
+        }
+
+        private void GenerateGraph()
+        {
+            Invoke(new Action(() => panel1.Visible = true));
+
+
+
+            modelpopulation = new Populacja(modelpopulationSize, FunctionName.type);
+            modelpopulation.SetRangeOfPopulation();
+            modelpopulation.GenerateGraphPopulation();
+            modelpopulation.ObliczPopulFitness();
+
+            population = new Populacja(PopulationSize, dim, FunctionName.type);
+            population.SetRangeOfPopulation();
+            population.GeneratePopulation(dim);
+            population.ObliczPopulFitness();
+
+            float[] newData = new float[modelpopulation.population.Count * 3];
+            Parallel.For(0, modelpopulation.population.Count, i =>
+            {
+                newData[i] = (float)modelpopulation.population[i].fitnessValue;  // Z
+                newData[i + modelpopulation.population.Count] = (float)modelpopulation.population[i].position[0]; // X
+                newData[i + 2 * modelpopulation.population.Count] = (float)modelpopulation.population[i].position[1]; // Y
+
+
+            });
+
+            int size = (int)Math.Sqrt(modelpopulation.population.Count);
+            data = ILNumerics.ILMath.array(newData, size, size, 3);
+            surface = new ILSurface(data);
+            surface.Fill.Markable = false;
+            surface.Wireframe.Markable = false;
+            //surface.Colormap = Colormaps.Copper;
+            ILColorbar color = new ILColorbar() { Location = new PointF(.96f, 0.1f) };
+            surface.Children.Add(color);
+            this.ShowParticleOnGraph(population);
+            //this.ShowGraphChart(population);
+            //this.ShowCharts(population);
+            //this.RefreshModel();
+
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -245,6 +383,9 @@ namespace PSOTests
         private void FunctionSelectionCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             funkcja = FunctionSelectionCombo.SelectedItem.ToString();
+            FunctionName.type = (FunctionName.Type)Enum.Parse(typeof(FunctionName.Type), FunctionSelectionCombo.SelectedItem.ToString());
+            //GenModel();
+            thesamepopulation.Enabled = false;
         }
     }
 }

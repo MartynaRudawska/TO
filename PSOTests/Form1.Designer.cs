@@ -35,6 +35,8 @@
             this.MaxEpochUpDown = new System.Windows.Forms.NumericUpDown();
             this.StartBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ParticleQuantityUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxEpochUpDown)).BeginInit();
             this.SuspendLayout();
@@ -130,15 +132,35 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(322, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 13);
+            this.label3.Size = new System.Drawing.Size(123, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Maksymalna ilość epok (iteracji)";
+            this.label3.Text = "Maksymalna ilość iteracji";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(16, 287);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(474, 295);
+            this.panel1.TabIndex = 11;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(508, 287);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(344, 295);
+            this.richTextBox1.TabIndex = 12;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 331);
+            this.ClientSize = new System.Drawing.Size(864, 594);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.StartBtn);
             this.Controls.Add(this.MaxEpochUpDown);
@@ -165,6 +187,8 @@
         private System.Windows.Forms.NumericUpDown MaxEpochUpDown;
         private System.Windows.Forms.Button StartBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
