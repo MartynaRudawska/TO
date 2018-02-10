@@ -26,6 +26,8 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             return a + r.NextDouble() * (b - a);
         }
 
+
+
         ///<summary>
         ///Banalny sprawdzający
         ///w przedziale [-3;3]
@@ -37,7 +39,7 @@ namespace TechnikiOptymalizacjiAG.Pomocnicze
             xp = -3;
             xk = 3;
             yMin=-2.125; // @x=-0.25
-            y = Math.Pow(randomPoint(xp, xk), 2) * 2 + randomPoint(xp, xk) - 2;   
+            y = Math.Pow(x, 2) * 2 + x - 2;   
 
             return new Tuple<double, double>(yMin, y);
         }

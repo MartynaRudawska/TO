@@ -9,7 +9,7 @@ namespace TechnikiOptymalizacjiAG
     class PSO
     {
         public static int numParticles = 5;
-        public static int maxEpochs = 1000;
+        public static int maxEpochs = 1000;         //Max ilość Iteracji
         public static double exitError = 0.0;
         public static double minX; // problem-dependent
         public static double maxX;
@@ -22,14 +22,14 @@ namespace TechnikiOptymalizacjiAG
         /// </summary>
         /// <param name="dziedzina">Dziedzina funkcji do optymalizacji</param>
         /// <param name="ilCzastek">Ilość cząstek roju</param>
-        /// <param name="maxEpok">maksymalna ilość epok</param>
+        /// <param name="maxIteracji">maksymalna ilość iteracji</param>
         /// <param name="Funkcja">Tekstowa postać funkcji do optymalizacji</param>
-        public PSO(Tuple<double, double> dziedzina, int ilCzastek, int maxEpok, string Funkcja)
+        public PSO(Tuple<double, double> dziedzina, int ilCzastek, int maxIteracji, string Funkcja)
         {
             minX = dziedzina.Item1;
             maxX = dziedzina.Item2;
             numParticles = ilCzastek;
-            maxEpochs = maxEpok;
+            maxEpochs = maxIteracji;
             PostacFunkcji = Funkcja;
             roj = new Particle[ilCzastek];
         }
@@ -185,7 +185,7 @@ namespace TechnikiOptymalizacjiAG
                 ++epoch;
             } // while
 
-            // Rój po przejściu wszystkich epok
+            // Rój po przejściu wszystkich Iteracji
             for (int i = 0; i < swarm.Length; ++i)
                 Console.WriteLine(swarm[i].ToString());
 

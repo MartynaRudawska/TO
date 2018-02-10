@@ -18,7 +18,11 @@ using GeneticSharp.Domain.Reinsertions;
 using GeneticSharp.Domain.Terminations;
 using GeneticSharp.Domain.Populations;
 using System.Threading;
+using GeneticSharp.Runner.GtkApp;
 using GeneticSharp.Runner.GtkApp.Samples;
+using Gdk;
+using Gtk;
+using GeneticSharp.Infrastructure.Framework.Reflection;
 
 namespace TechnikiOptymalizacjiAG
 {
@@ -63,11 +67,11 @@ namespace TechnikiOptymalizacjiAG
         {
             InitializeComponent();
             InitializeComponent();
-            dziedzinyFunkcji.Add("2*x^2+x-2", new Tuple<double, double>(-3, 3));
-            dziedzinyFunkcji.Add("x^2+sin(3 cos(5x))", new Tuple<double, double>(-1, 1));
-            dziedzinyFunkcji.Add("x^4+x^3-7x^2-5x+10", new Tuple<double, double>(-5, 5));
-            dziedzinyFunkcji.Add("sin(2 x)+log_{10}(x^2)", new Tuple<double, double>(-7, 7));
-            dziedzinyFunkcji.Add("|(log_{10}(x^2)|", new Tuple<double, double>(0, 2));
+            dziedzinyFunkcji.Add("DeJong1", new Tuple<double, double>(-5.12, 5.12));
+            dziedzinyFunkcji.Add("Schwefel)", new Tuple<double, double>(-500, 500));
+            dziedzinyFunkcji.Add("Rosenbrock", new Tuple<double, double>(-2.048, 2.048));
+            dziedzinyFunkcji.Add("Rastrigin)", new Tuple<double, double>(-5.12, 5.12));
+            
         }
         #endregion
         private void Form1_Load(object sender, EventArgs e)
@@ -105,7 +109,7 @@ namespace TechnikiOptymalizacjiAG
         }
 
         #region Metody Algorytmu Genetycznego
-        /*
+
 
         /// <summary>
         /// Uruchamianie wątku, w którym pracuje Algorytm Genetyczny
@@ -128,8 +132,8 @@ namespace TechnikiOptymalizacjiAG
             {
                 m_sampleController.Reset();
                 m_sampleContext.Population = new Population(
-                    Convert.ToInt32(sbtPopulationMinSize.Value),
-                    Convert.ToInt32(sbtPopulationMaxSize.Value),
+                    Convert.ToInt32(PopulationMinUpDown.Value),
+                    Convert.ToInt32(PopulationMaxUpDown.Value),
                     m_sampleController.CreateChromosome());
 
                 m_sampleContext.Population.GenerationStrategy = m_generationStrategy;
@@ -141,8 +145,8 @@ namespace TechnikiOptymalizacjiAG
                     m_crossover,
                     m_mutation);
 
-                m_ga.CrossoverProbability = Convert.ToSingle(hslCrossoverProbability.Value);
-                m_ga.MutationProbability = Convert.ToSingle(hslMutationProbability.Value);
+               // m_ga.CrossoverProbability = Convert.ToSingle(hslCrossoverProbability.Value);
+                m_ga.MutationProbability = Convert.ToSingle(MutationProbTrackbar.Value);
                 m_ga.Reinsertion = m_reinsertion;
                 m_ga.Termination = m_termination;
 
@@ -167,20 +171,20 @@ namespace TechnikiOptymalizacjiAG
         {
             RunGA(() =>
             {
-                m_ga.Population.MinSize = Convert.ToInt32(sbtPopulationMinSize.Value);
-                m_ga.Population.MaxSize = Convert.ToInt32(sbtPopulationMaxSize.Value);
+                m_ga.Population.MinSize = Convert.ToInt32(PopulationMinUpDown.Value);
+                m_ga.Population.MaxSize = Convert.ToInt32(PopulationMaxUpDown.Value);
                 m_ga.Selection = m_selection;
                 m_ga.Crossover = m_crossover;
                 m_ga.Mutation = m_mutation;
-                m_ga.CrossoverProbability = Convert.ToSingle(hslCrossoverProbability.Value);
-                m_ga.MutationProbability = Convert.ToSingle(hslMutationProbability.Value);
+                //m_ga.CrossoverProbability = Convert.ToSingle(hslCrossoverProbability.Value);
+                m_ga.MutationProbability = Convert.ToSingle(MutationProbTrackbar.Value);
                 m_ga.Reinsertion = m_reinsertion;
                 m_ga.Termination = m_termination;
 
                 m_ga.Resume();
             });
         }
-
+        
         private void RunGA(System.Action runAction)
         {
             try
@@ -228,10 +232,6 @@ namespace TechnikiOptymalizacjiAG
         #endregion
 
         #region Event Handlers
-
-
-    */
-
 
         private void CompareBtn_Click(object sender, EventArgs e)
         {
