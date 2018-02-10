@@ -31,15 +31,15 @@ namespace PSOTests
             this.c2 = c2;
         }
         public int nrIteracji;
-        public double w = 0.79; //inertia weight
+        public double w //= 0.79; //inertia weight
         public double c1= 1.49445;
         public double c2= 1.49445;
 
-       /* public double setw(int k)
+        public double setw(int k)
         {
             w = 0.9 - k * (0.9 - 0.4) / nrIteracji;
             return w;
-        }*/
+        
         public bool r1r2;
         public bool linearinertia;
 
@@ -54,9 +54,6 @@ namespace PSOTests
             int iteracja = 0;
             double[] NajlepszaPozycja = new double[p.dim];
             double NajlepszaFitness = double.MaxValue;
-
-
-
 
             List<Populacja> roj = new List<Populacja>();
             roj.Add(p);
@@ -78,7 +75,6 @@ namespace PSOTests
             double r1, r2; // poznawczy i ogólne spułczynniki randoma
 
             // tworzenie roju ->swam
-
 
             while (iteracja < nrIteracji)
             {
@@ -156,7 +152,7 @@ namespace PSOTests
                     Particle.copy(item, tmp);
                     currP2.population.Add(tmp);
                     roj.Last().NajlepszaPozycja = new double[p.dim];
-                    najlepszaPozycja.CopyTo(roj.Last().NajlepszaPozycja, 0);
+                    NajlepszaPozycja.CopyTo(roj.Last().NajlepszaPozycja, 0);
                     roj.Last().NajlepszaFitness = NajlepszaFitness;
 
                 }
